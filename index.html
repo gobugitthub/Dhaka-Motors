@@ -426,14 +426,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto bg-navy-950 p-8 sm:p-12 rounded-3xl border border-blue-900/50 shadow-2xl">
                 <div>
                     <h3 class="text-2xl font-bold text-white mb-6">DHAKA MOTORS</h3>
-                    <p class="text-slate-300 text-sm mb-6 font-medium">We are dedicated to turning you into a safe, confident driver with certified instructors and hassle-free DMV services.</p>
+                    <p class="text-slate-300 text-sm mb-8 font-medium">We are dedicated to turning you into a safe, confident driver with certified instructors and hassle-free DMV services.</p>
                     
-                    <!-- Brief Info Box Space Added Here -->
-                    <div class="mb-6 p-4 bg-navy-900/80 rounded-2xl border border-blue-800/40">
-                        <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-1">Brief Info</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">Open 7 days a week for inquiries, permit support, road test scheduling, and instant DMV documentation processing. Call or visit us today!</p>
-                    </div>
-
                     <div class="space-y-4 text-sm text-slate-200">
                         <div class="flex items-start space-x-3">
                             <div class="w-10 h-10 bg-blue-600/20 text-blue-300 rounded-xl flex items-center justify-center font-bold shrink-0 border border-blue-500/30">📍</div>
@@ -449,7 +443,7 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
+                <!-- Contact Form with Editable Brief Info Field -->
                 <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name</label>
@@ -473,6 +467,10 @@
                             <option>Pre-licensing Course</option>
                             <option>Defensive Driving Course</option>
                         </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Brief Info / Additional Notes</label>
+                        <textarea rows="3" placeholder="Type any extra info or questions you want to add here..." class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-blue-600/30 text-sm">Submit Request</button>
                 </form>
