@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,14 +20,18 @@
             }
         }
     </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #020c1b; border-radius: 9999px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 9999px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+    </style>
 </head>
 <body class="bg-navy-950 text-white font-sans antialiased">
 
     <!-- Top Contact Bar with Click-to-Call -->
     <div class="bg-blue-600 text-white text-xs font-semibold py-2 px-4 text-center sm:flex sm:justify-between sm:px-8 border-b border-blue-500/30">
-        <div class="mb-1 sm:mb-0">
-            📍 16711 Hillside Ave. Suite #2A Jamaica NY 11432
-        </div>
+        <div class="mb-1 sm:mb-0">📍 16711 Hillside Ave. Suite #2A Jamaica NY 11432</div>
         <div class="space-x-4">
             <span>Call Us:</span>
             <a href="tel:7186666686" class="underline hover:text-blue-200 transition font-bold">718-666-6686</a>
@@ -39,10 +43,12 @@
     <!-- Header / Navbar -->
     <header class="sticky top-0 z-50 bg-navy-950/90 backdrop-blur border-b border-blue-900/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
+            <a href="#" class="flex items-center space-x-3">
                 <div class="bg-blue-600 text-white font-black text-xl px-3 py-2 rounded-lg tracking-wider shadow-lg shadow-blue-600/30">DM</div>
-                <span class="text-2xl font-black tracking-tight text-white">DHAKA <span class="text-blue-400">MOTORS</span></span>
-            </div>
+                <span class="text-xl sm:text-2xl font-black tracking-tight text-white">DHAKA <span class="text-blue-400">MOTORS</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-200">
                 <a href="#expertise" class="hover:text-blue-400 transition">Expertise</a>
                 <a href="#services-grid" class="hover:text-blue-400 transition">DMV Services</a>
@@ -50,7 +56,24 @@
                 <a href="#services" class="hover:text-blue-400 transition">Other Services</a>
                 <a href="#contact" class="hover:text-blue-400 transition">Contact Info</a>
             </nav>
-            <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition shadow-lg shadow-blue-600/30">Book Now</a>
+
+            <div class="flex items-center space-x-3">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white px-4 sm:px-5 py-2.5 rounded-xl font-medium text-sm transition shadow-lg shadow-blue-600/30">Book Now</a>
+                <button id="mobile-menu-btn" type="button" aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-navy-900 border border-blue-900/50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-blue-900/40 px-4 pt-2 pb-4 space-y-2 text-sm font-semibold text-slate-200">
+            <a href="#expertise" class="block py-2 hover:text-blue-400 transition mobile-link">Expertise</a>
+            <a href="#services-grid" class="block py-2 hover:text-blue-400 transition mobile-link">DMV Services</a>
+            <a href="#packages" class="block py-2 hover:text-blue-400 transition mobile-link">Learning Packages</a>
+            <a href="#services" class="block py-2 hover:text-blue-400 transition mobile-link">Other Services</a>
+            <a href="#contact" class="block py-2 hover:text-blue-400 transition mobile-link">Contact Info</a>
         </div>
     </header>
 
@@ -142,7 +165,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
                 <!-- 1st Box: Regular or TLC Plate -->
                 <div class="border border-blue-900/50 rounded-2xl relative overflow-hidden group hover:border-blue-500 transition duration-300 shadow-xl bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80');">
                     <div class="absolute inset-0 bg-navy-950/80 group-hover:bg-navy-950/70 transition"></div>
@@ -150,9 +172,9 @@
                         <h3 class="text-2xl font-bold text-white mb-4 border-b border-blue-900/50 pb-3">Regular or TLC Plate</h3>
                         <ul class="space-y-3 text-slate-100 text-sm font-medium">
                             <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>New Vehicle Registration & Plate for Personal or Commercial or TLC Use.</span></li>
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Automatic Registration Renewal. Lost, Damage registration replace.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Automatic Registration Renewal. Lost, Damaged registration replacement.</span></li>
                             <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Sales tax for vehicles. Calculation & payments for any county or state.</span></li>
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>New Title, Duplicate Title if Lost, Stolen, Damage within 2 days.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>New Title, Duplicate Title if Lost, Stolen, or Damaged within 2 days.</span></li>
                             <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Vehicle ownership change, Lien status change in Title.</span></li>
                         </ul>
                     </div>
@@ -164,9 +186,9 @@
                     <div class="relative z-10 p-8 backdrop-blur-[2px]">
                         <h3 class="text-2xl font-bold text-white mb-4 border-b border-blue-900/50 pb-3">Lowest Insurance</h3>
                         <ul class="space-y-3 text-slate-100 text-sm font-medium">
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>New Insurance Quote with monthly lowest rate.</span></li>
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>New Insurance ID Card with effective date same day .</span></li>
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Insurance company change with less payment plan.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>New Insurance Quote with lowest monthly rate.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>New Insurance ID Card with same-day effective date.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Insurance company change with lower payment plan.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -177,9 +199,9 @@
                     <div class="relative z-10 p-8 backdrop-blur-[2px]">
                         <h3 class="text-2xl font-bold text-white mb-4 border-b border-blue-900/50 pb-3">Parking Fee</h3>
                         <ul class="space-y-3 text-slate-100 text-sm font-medium">
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Parking ticket payment with no extra fees or no late fee.</span></li>
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Get your ticket if no parking, no standing. street cleaning.</span></li>
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Need to pay within 30 days if any parking ticket issued.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Parking ticket payment with no extra fees or late fees.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Assistance for no parking, no standing, and street cleaning tickets.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Need to pay within 30 days if any parking ticket is issued.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -190,13 +212,12 @@
                     <div class="relative z-10 p-8 backdrop-blur-[2px]">
                         <h3 class="text-2xl font-bold text-white mb-4 border-b border-blue-900/50 pb-3">Moving Violation</h3>
                         <ul class="space-y-3 text-slate-100 text-sm font-medium">
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Any police officer ticket is a points violation with minimum 2, 3, 4, 6 points.</span></li>
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Need to respond within 30 days by person or with lawyer in any state.</span></li>
-                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Fight tickets if disobey traffic sign, speeding, stop sign, wrong side driving.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Any police officer ticket is a points violation with minimum 2, 3, 4, or 6 points.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Need to respond within 30 days in person or with a lawyer in any state.</span></li>
+                            <li class="flex items-start space-x-2"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 shrink-0"></span><span>Fight tickets for disobeying traffic signs, speeding, stop signs, or wrong-way driving.</span></li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -209,9 +230,7 @@
                 <p class="mt-2 text-slate-300 font-medium">Choose the ideal package that fits your learning pace and road test needs.</p>
             </div>
 
-            <!-- Parallel Columns -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
                 <!-- Package 1: 10 Lesson Package -->
                 <div class="bg-navy-900 border-2 border-blue-600 rounded-2xl p-6 flex flex-col justify-between relative shadow-2xl shadow-blue-950/50">
                     <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
@@ -225,8 +244,6 @@
                             <li>✓ Car and Instructor for Road Test</li>
                             <li>✓ Pick up and drop service included with no extra charges</li>
                         </ul>
-
-                        <!-- Dropdown Accordion -->
                         <details class="mt-4 group border-t border-blue-900/50 pt-3">
                             <summary class="text-xs font-semibold text-blue-400 cursor-pointer list-none flex items-center justify-between hover:text-blue-300 transition">
                                 <span>Click for more information:</span>
@@ -235,13 +252,13 @@
                             <ul class="mt-3 space-y-2 text-xs text-slate-300">
                                 <li>• Individual session in a dual-controlled state-certified vehicle</li>
                                 <li>• Application of road knowledge/driving theory</li>
-                                <li>• Review of basic and advance vehicle maneuvering</li>
+                                <li>• Review of basic and advanced vehicle maneuvering</li>
                                 <li>• Instruction and application of defensive driving skills</li>
                                 <li>• Preparation for the road/driver license tests</li>
                             </ul>
                         </details>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded-xl transition text-sm">Select Package</a>
+                    <a href="#contact" onclick="selectService('10 LESSON PACKAGE')" class="mt-8 block text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded-xl transition text-sm">Select Package</a>
                 </div>
 
                 <!-- Package 2: 5 Lesson Package -->
@@ -256,8 +273,6 @@
                             <li>✓ Car and Instructor for Road Test</li>
                             <li>✓ Pick up and drop off included & no extra</li>
                         </ul>
-
-                        <!-- Dropdown Accordion -->
                         <details class="mt-4 group border-t border-blue-900/50 pt-3">
                             <summary class="text-xs font-semibold text-blue-400 cursor-pointer list-none flex items-center justify-between hover:text-blue-300 transition">
                                 <span>Click for more information:</span>
@@ -266,13 +281,13 @@
                             <ul class="mt-3 space-y-2 text-xs text-slate-300">
                                 <li>• Individual session in a dual-controlled state-certified vehicle</li>
                                 <li>• Application of road knowledge/driving theory</li>
-                                <li>• Review of basic and advance vehicle maneuvering</li>
+                                <li>• Review of basic and advanced vehicle maneuvering</li>
                                 <li>• Instruction and application of defensive driving skills</li>
                                 <li>• Preparation for the road/driver license tests</li>
                             </ul>
                         </details>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center bg-navy-950 hover:bg-blue-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm">Select Package</a>
+                    <a href="#contact" onclick="selectService('5 LESSON PACKAGE')" class="mt-8 block text-center bg-navy-950 hover:bg-blue-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm">Select Package</a>
                 </div>
 
                 <!-- Package 3: 3 Lesson Package -->
@@ -287,8 +302,6 @@
                             <li>✓ Car and Instructor for Road Test</li>
                             <li>✓ Pick up and drop off included & no extra</li>
                         </ul>
-
-                        <!-- Dropdown Accordion -->
                         <details class="mt-4 group border-t border-blue-900/50 pt-3">
                             <summary class="text-xs font-semibold text-blue-400 cursor-pointer list-none flex items-center justify-between hover:text-blue-300 transition">
                                 <span>Click for more information:</span>
@@ -297,13 +310,13 @@
                             <ul class="mt-3 space-y-2 text-xs text-slate-300">
                                 <li>• Individual session in a dual-controlled state-certified vehicle</li>
                                 <li>• Application of road knowledge/driving theory</li>
-                                <li>• Review of basic and advance vehicle maneuvering</li>
+                                <li>• Review of basic and advanced vehicle maneuvering</li>
                                 <li>• Instruction and application of defensive driving skills</li>
                                 <li>• Preparation for the road/driver license tests</li>
                             </ul>
                         </details>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center bg-navy-950 hover:bg-blue-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm">Select Package</a>
+                    <a href="#contact" onclick="selectService('3 LESSON PACKAGE')" class="mt-8 block text-center bg-navy-950 hover:bg-blue-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm">Select Package</a>
                 </div>
 
                 <!-- Package 4: 1 Lesson Package -->
@@ -319,8 +332,6 @@
                             <li>✓ Car and Instructor for Road Test</li>
                             <li>✓ Pick up and drop off included & no extra</li>
                         </ul>
-
-                        <!-- Dropdown Accordion -->
                         <details class="mt-4 group border-t border-blue-900/50 pt-3">
                             <summary class="text-xs font-semibold text-blue-400 cursor-pointer list-none flex items-center justify-between hover:text-blue-300 transition">
                                 <span>Click for more information:</span>
@@ -329,15 +340,14 @@
                             <ul class="mt-3 space-y-2 text-xs text-slate-300">
                                 <li>• Individual session in a dual-controlled state-certified vehicle</li>
                                 <li>• Application of road knowledge/driving theory</li>
-                                <li>• Review of basic and advance vehicle maneuvering</li>
+                                <li>• Review of basic and advanced vehicle maneuvering</li>
                                 <li>• Instruction and application of defensive driving skills</li>
                                 <li>• Preparation for the road/driver license tests</li>
                             </ul>
                         </details>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center bg-navy-950 hover:bg-blue-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm">Select Package</a>
+                    <a href="#contact" onclick="selectService('1 LESSON PACKAGE')" class="mt-8 block text-center bg-navy-950 hover:bg-blue-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm">Select Package</a>
                 </div>
-
             </div>
         </div>
     </section>
@@ -349,11 +359,9 @@
             <p class="mt-2 text-slate-300 font-medium">Scroll horizontally to explore our specialized standalone classes and services.</p>
         </div>
 
-        <!-- Scroll Container -->
-        <div class="flex overflow-x-auto space-x-6 pb-6 scrollbar-thin scrollbar-thumb-blue-900 snap-x">
-            
+        <div class="flex overflow-x-auto space-x-6 pb-6 custom-scrollbar snap-x">
             <!-- Service 1: Road Test -->
-            <div class="min-w-[320px] sm:min-w-[380px] border border-blue-900/50 rounded-2xl snap-start flex flex-col justify-between shadow-lg bg-cover bg-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80');">
+            <div class="group min-w-[320px] sm:min-w-[380px] border border-blue-900/50 rounded-2xl snap-start flex flex-col justify-between shadow-lg bg-cover bg-center relative overflow-hidden hover:border-blue-500 transition" style="background-image: url('https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80');">
                 <div class="absolute inset-0 bg-navy-950/75 group-hover:bg-navy-950/65 transition"></div>
                 <div class="relative z-10 p-8 backdrop-blur-[2px]">
                     <div class="flex justify-between items-start mb-4">
@@ -368,12 +376,12 @@
                     </ul>
                 </div>
                 <div class="relative z-10 p-8 pt-0">
-                    <a href="#contact" class="block text-center bg-navy-950/90 hover:bg-navy-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm backdrop-blur-sm">Book Service</a>
+                    <a href="#contact" onclick="selectService('Road Test')" class="block text-center bg-navy-950/90 hover:bg-blue-600 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm backdrop-blur-sm">Book Service</a>
                 </div>
             </div>
 
             <!-- Service 2: Pre-licensing Class -->
-            <div class="min-w-[320px] sm:min-w-[380px] border border-blue-900/50 rounded-2xl snap-start flex flex-col justify-between shadow-lg bg-cover bg-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80');">
+            <div class="group min-w-[320px] sm:min-w-[380px] border border-blue-900/50 rounded-2xl snap-start flex flex-col justify-between shadow-lg bg-cover bg-center relative overflow-hidden hover:border-blue-500 transition" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80');">
                 <div class="absolute inset-0 bg-navy-950/75 group-hover:bg-navy-950/65 transition"></div>
                 <div class="relative z-10 p-8 backdrop-blur-[2px]">
                     <div class="flex justify-between items-start mb-4">
@@ -388,12 +396,12 @@
                     </ul>
                 </div>
                 <div class="relative z-10 p-8 pt-0">
-                    <a href="#contact" class="block text-center bg-navy-950/90 hover:bg-navy-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm backdrop-blur-sm">Book Service</a>
+                    <a href="#contact" onclick="selectService('Pre-licensing Course')" class="block text-center bg-navy-950/90 hover:bg-blue-600 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm backdrop-blur-sm">Book Service</a>
                 </div>
             </div>
 
             <!-- Service 3: Defensive Driving Course (DDC) -->
-            <div class="min-w-[320px] sm:min-w-[380px] border border-blue-900/50 rounded-2xl snap-start flex flex-col justify-between shadow-lg bg-cover bg-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80');">
+            <div class="group min-w-[320px] sm:min-w-[380px] border border-blue-900/50 rounded-2xl snap-start flex flex-col justify-between shadow-lg bg-cover bg-center relative overflow-hidden hover:border-blue-500 transition" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80');">
                 <div class="absolute inset-0 bg-navy-950/75 group-hover:bg-navy-950/65 transition"></div>
                 <div class="relative z-10 p-8 backdrop-blur-[2px]">
                     <div class="flex justify-between items-start mb-4">
@@ -408,10 +416,9 @@
                     </ul>
                 </div>
                 <div class="relative z-10 p-8 pt-0">
-                    <a href="#contact" class="block text-center bg-navy-950/90 hover:bg-navy-900 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm backdrop-blur-sm">Book Service</a>
+                    <a href="#contact" onclick="selectService('Defensive Driving Course')" class="block text-center bg-navy-950/90 hover:bg-blue-600 text-white border border-blue-800/50 font-semibold py-2.5 rounded-xl transition text-sm backdrop-blur-sm">Book Service</a>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -424,55 +431,64 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto bg-navy-950 p-8 sm:p-12 rounded-3xl border border-blue-900/50 shadow-2xl">
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-6">DHAKA MOTORS</h3>
-                    <p class="text-slate-300 text-sm mb-8 font-medium">We are dedicated to turning you into a safe, confident driver with certified instructors and hassle-free DMV services.</p>
-                    
-                    <div class="space-y-4 text-sm text-slate-200">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-10 h-10 bg-blue-600/20 text-blue-300 rounded-xl flex items-center justify-center font-bold shrink-0 border border-blue-500/30">📍</div>
-                            <span class="font-semibold">16711 Hillside Ave. Suite #2A Jamaica NY 11432</span>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-10 h-10 bg-blue-600/20 text-blue-300 rounded-xl flex items-center justify-center font-bold shrink-0 border border-blue-500/30">📞</div>
-                            <div class="font-semibold pt-2">
-                                <a href="tel:7186666686" class="text-blue-400 hover:underline">718-666-6686</a> // 
-                                <a href="tel:7186669373" class="text-blue-400 hover:underline">718-666-9373</a>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6">DHAKA MOTORS</h3>
+                        <p class="text-slate-300 text-sm mb-8 font-medium">We are dedicated to turning you into a safe, confident driver with certified instructors and hassle-free DMV services.</p>
+                        
+                        <div class="space-y-4 text-sm text-slate-200">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 bg-blue-600/20 text-blue-300 rounded-xl flex items-center justify-center font-bold shrink-0 border border-blue-500/30">📍</div>
+                                <span class="font-semibold pt-1">16711 Hillside Ave. Suite #2A Jamaica NY 11432</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 bg-blue-600/20 text-blue-300 rounded-xl flex items-center justify-center font-bold shrink-0 border border-blue-500/30">📞</div>
+                                <div class="font-semibold pt-2">
+                                    <a href="tel:7186666686" class="text-blue-400 hover:underline">718-666-6686</a> // 
+                                    <a href="tel:7186669373" class="text-blue-400 hover:underline">718-666-9373</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="mt-8 pt-6 border-t border-blue-900/40">
+                        <a href="https://maps.google.com/?q=16711+Hillside+Ave+Jamaica+NY+11432" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-blue-400 hover:text-blue-300 transition">
+                            View Location on Google Maps ↗
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Contact Form with Editable Brief Info Field -->
-                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
+                <!-- Contact Form Connected to Google Sheets -->
+                <form id="booking-form" class="space-y-4">
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name</label>
-                        <input type="text" required class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+                        <input type="text" name="name" required class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Phone Number</label>
-                        <input type="tel" required class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+                        <input type="tel" name="phone" required class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Select Service / Package</label>
-                        <select class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition">
-                            <option>10 LESSON PACKAGE</option>
-                            <option>5 LESSON PACKAGE</option>
-                            <option>3 LESSON PACKAGE</option>
-                            <option>1 LESSON PACKAGE</option>
-                            <option>DL</option>
-                            <option>DC</option>
-                            <option>VR</option>
-                            <option>Road Test</option>
-                            <option>Pre-licensing Course</option>
-                            <option>Defensive Driving Course</option>
+                        <select name="service" id="service-select" class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+                            <option value="10 LESSON PACKAGE">10 LESSON PACKAGE ($650)</option>
+                            <option value="5 LESSON PACKAGE">5 LESSON PACKAGE ($400)</option>
+                            <option value="3 LESSON PACKAGE">3 LESSON PACKAGE ($320)</option>
+                            <option value="1 LESSON PACKAGE">1 LESSON PACKAGE ($220)</option>
+                            <option value="DL">Learner & Lessons (DL)</option>
+                            <option value="DC">Certification & Records (DC)</option>
+                            <option value="VR">Vehicle & DMV Services (VR)</option>
+                            <option value="Road Test">Road Test ($100)</option>
+                            <option value="Pre-licensing Course">Pre-licensing Course ($30)</option>
+                            <option value="Defensive Driving Course">Defensive Driving Course ($50)</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Brief Info / Additional Notes</label>
-                        <textarea rows="3" placeholder="Type any extra info or questions you want to add here..." class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition"></textarea>
+                        <textarea name="notes" rows="3" placeholder="Type any extra info or questions you want to add here..." class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-blue-600/30 text-sm">Submit Request</button>
+                    <button type="submit" id="submit-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-blue-600/30 text-sm">Submit Request</button>
+                    <p id="form-status" class="text-xs text-center hidden pt-1"></p>
                 </form>
             </div>
         </div>
@@ -482,6 +498,60 @@
     <footer class="py-8 text-center text-xs text-slate-400 border-t border-blue-900/40 bg-navy-950">
         &copy; 2026 DHAKA MOTORS. All rights reserved.
     </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Auto-select Package/Service when clicking card buttons
+        function selectService(serviceValue) {
+            const select = document.getElementById('service-select');
+            if (select) {
+                select.value = serviceValue;
+            }
+        }
+
+        // 3. Google Sheets Form Submission
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzliTecOi3eKk5kDcXyAfnfiViXjR_nkgPPZwcUm3J2gvqlqlFR6Ho-UbOgwlVVXQd43A/exec';
+        const form = document.getElementById('booking-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formStatus = document.getElementById('form-status');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.classList.add('hidden');
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    formStatus.textContent = '✓ Thank you! Your request has been sent to Dhaka Motors.';
+                    formStatus.className = 'text-xs text-center text-emerald-400 font-semibold pt-2 block';
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Request';
+                })
+                .catch(error => {
+                    formStatus.textContent = '⚠ Submission failed. Please call us directly at 718-666-6686.';
+                    formStatus.className = 'text-xs text-center text-rose-400 font-semibold pt-2 block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Request';
+                });
+        });
+    </script>
 
 </body>
 </html>
