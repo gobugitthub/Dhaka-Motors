@@ -466,7 +466,18 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Phone Number</label>
-                        <input type="tel" name="phone" required class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+                        <div class="flex space-x-2">
+                            <select id="country-code" aria-label="Country Code" class="bg-navy-900 border border-blue-900/60 rounded-xl px-3 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition shrink-0">
+                                <option value="+1" selected>🇺🇸 +1 (US/CA)</option>
+                                <option value="+880">🇧🇩 +880 (BD)</option>
+                                <option value="+91">🇮🇳 +91 (IN)</option>
+                                <option value="+44">🇬🇧 +44 (UK)</option>
+                                <option value="+971">🇦🇪 +971 (UAE)</option>
+                                <option value="+966">🇸🇦 +966 (KSA)</option>
+                                <option value="+61">🇦🇺 +61 (AU)</option>
+                            </select>
+                            <input type="tel" id="phone-input" name="phone" required placeholder="718-000-0000" class="w-full bg-navy-900 border border-blue-900/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+                        </div>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Select Service / Package</label>
@@ -524,7 +535,7 @@
             }
         }
 
-        // 3. Google Sheets Form Submission
+        // 3. Google Sheets Form Submission with Country Code prefix
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzliTecOi3eKk5kDcXyAfnfiViXjR_nkgPPZwcUm3J2gvqlqlFR6Ho-UbOgwlVVXQd43A/exec';
         const form = document.getElementById('booking-form');
         const submitBtn = document.getElementById('submit-btn');
@@ -536,7 +547,12 @@
             submitBtn.textContent = 'Sending...';
             formStatus.classList.add('hidden');
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            const formData = new FormData(form);
+            const countryCode = document.getElementById('country-code').value;
+            const rawPhone = document.getElementById('phone-input').value.trim();
+            formData.set('phone', `${countryCode} ${rawPhone}`);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => {
                     formStatus.textContent = '✓ Thank you! Your request has been sent to Dhaka Motors.';
                     formStatus.className = 'text-xs text-center text-emerald-400 font-semibold pt-2 block';
